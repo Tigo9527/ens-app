@@ -19,7 +19,7 @@ const TabLink = styled(Link)`
   &:visited {
     color: ${({ active }) => (active ? 'white' : '#D2D2D2')};
   }
-  &:first-child {
+  &:first-of-type {
     border-radius: 4px 0 0 4px;
   }
 
@@ -69,6 +69,8 @@ const Tabs = ({ domain, pathname, parent, tab }) => {
               (tab === 'register' || pathname === `/name/${name}/register`) &&
               (pathname !== `/name/${name}/details` &&
                 pathname !== `/name/${name}/subdomains`)
+                ? 'true'
+                : ''
             }
             to={`/name/${name}/register`}
           >
@@ -77,13 +79,13 @@ const Tabs = ({ domain, pathname, parent, tab }) => {
         )}
 
         <TabLink
-          active={getDetailsActive(domain, pathname, tab)}
+          active={getDetailsActive(domain, pathname, tab) ? 'true' : ''}
           to={`/name/${name}/details`}
         >
           {t('singleName.tabs.details')}
         </TabLink>
         <TabLink
-          active={pathname === `/name/${name}/subdomains`}
+          active={pathname === `/name/${name}/subdomains` ? 'true' : ''}
           to={`/name/${name}/subdomains`}
         >
           {t('singleName.tabs.subdomains')}

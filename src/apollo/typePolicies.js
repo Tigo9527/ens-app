@@ -35,6 +35,10 @@ export default {
       network: {
         read() {
           const network = networkReactive()
+          console.log(`network is `, network)
+          if (network?.chainId === 71) {
+            return 'EvmTestnet'
+          }
           const networkName = network?.name
           if (!networkName) return 'Loading'
           return networkName === 'homestead' ? 'Main' : networkName

@@ -44,7 +44,7 @@ const resolvers = {
         const minCommitmentAge = await registrar.getMinimumCommitmentAge()
         return parseInt(minCommitmentAge)
       } catch (e) {
-        console.log(e)
+        console.log(`${__filename}`, e)
       }
     },
     async getMaximumCommitmentAge() {
@@ -53,7 +53,7 @@ const resolvers = {
         const maximumCommitmentAge = await registrar.getMaximumCommitmentAge()
         return parseInt(maximumCommitmentAge)
       } catch (e) {
-        console.log(e)
+        console.log(`${__filename}`, e)
       }
     },
     async checkCommitment(_, { label, secret }) {

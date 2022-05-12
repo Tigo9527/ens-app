@@ -38,6 +38,7 @@ export const setSubDomainFavourites = () => {
 
 export const isSupportedNetwork = networkId => {
   switch (networkId) {
+    case 71:
     case 1:
     case 3:
     case 4:

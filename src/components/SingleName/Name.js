@@ -153,13 +153,16 @@ function Name({ details: domain, name, pathname, type, refetch }) {
 
   return (
     <>
-      <NonMainPageBannerContainerWithMarginBottom>
-        {showNameWrapperBanner ? (
-          <NameWrapperBanner isWrapped={isNameWrapped} />
-        ) : (
-          <DAOBannerContent />
-        )}
-      </NonMainPageBannerContainerWithMarginBottom>
+      {showNameWrapperBanner && (
+        <NonMainPageBannerContainerWithMarginBottom>
+          {showNameWrapperBanner ? (
+            <NameWrapperBanner isWrapped={isNameWrapped} />
+          ) : (
+            // <DAOBannerContent />
+            ''
+          )}
+        </NonMainPageBannerContainerWithMarginBottom>
+      )}
       <NameContainer state={containerState} key={key}>
         <TopBar percentDone={percentDone}>
           <Title>

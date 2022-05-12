@@ -88,6 +88,9 @@ export const uniq = (a, param) =>
 export async function getEtherScanAddr() {
   const networkId = await getNetworkId()
   switch (networkId) {
+    case 71:
+    case '71':
+      return 'https://evmtestnet.confluxscan.net'
     case 1:
     case '1':
       return 'https://etherscan.io/'

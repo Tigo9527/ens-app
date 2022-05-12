@@ -21,7 +21,11 @@ const endpoints = {
   '1': 'https://api.thegraph.com/subgraphs/name/ensdomains/ens',
   '3': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensropsten',
   '4': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensrinkeby',
-  '5': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensgoerli'
+  '5': 'https://api.thegraph.com/subgraphs/name/ensdomains/ensgoerli',
+  // '71': 'http://thegraph.conflux123.xyz:18000/subgraphs/name/graphprotocol/ens/graphql',
+  '71': 'http://thegraph.conflux123.xyz:18000/subgraphs/name/graphprotocol/ens'
+  // '71': 'http://thegraph.conflux123.xyz/subgraphs/name/graphprotocol/ens/graphql',
+  // '71':    'http://thegraph.conflux123.xyz/subgraphs/name/graphprotocol/ens',
 }
 
 function getGraphQLAPI() {
@@ -34,7 +38,7 @@ function getGraphQLAPI() {
   if (endpoints[network]) {
     return endpoints[network]
   }
-
+  console.log(`subgraph not set for ${network}, use default 1`)
   return endpoints['1']
 }
 

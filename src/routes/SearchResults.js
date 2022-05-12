@@ -88,9 +88,9 @@ const ResultsContainer = ({ searchDomain, match }) => {
   if (parsed) {
     return (
       <>
-        <NonMainPageBannerContainer>
-          <DAOBannerContent />
-        </NonMainPageBannerContainer>
+        {/*<NonMainPageBannerContainer>*/}
+        {/*  <DAOBannerContent />*/}
+        {/*</NonMainPageBannerContainer>*/}
         <H2>
           <Trans i18nKey="singleName.search.title">Names</Trans>
         </H2>

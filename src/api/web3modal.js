@@ -60,17 +60,21 @@ let web3Modal
 export const connect = async () => {
   try {
     const Web3Modal = (await import('@ensdomains/web3modal')).default
-
+    //console.log(`debug web3  - 1`)
     web3Modal = new Web3Modal(option)
     provider = await web3Modal.connect()
-
+    //console.log(`debug web3  - 2`)
+    const ensAddress = '0xC7b7224F76dD98bE23b717668d55cB40E9B3DF7f'
     await setupENS({
       customProvider: provider,
       reloadOnAccountsChange: false,
-      enforceReload: true
+      enforceReload: true,
+      ensAddress
     })
     return provider
   } catch (e) {
+    //    console.log(`debug web3  - 3`)
+    //    console.log(`setup fail `, e)
     if (e !== 'Modal closed by user') {
       throw e
     }

@@ -84,7 +84,7 @@ export async function setup({
         .latestAnswer()
         .then(res => {
           console.log(`price is `, res, res.toNumber())
-          return new BN(130000000)
+          return res
         })
         .catch(err => {
           console.log(`latest answer fail`, err)
